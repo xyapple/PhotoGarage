@@ -1,0 +1,16 @@
+{
+  "name": "photo-garage",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Yin Deascentis",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^1.15.0",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {},
+  "description": ""
+}
