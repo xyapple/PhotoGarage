@@ -58,24 +58,25 @@ successResponse : function(msg){
 //fails response for user login
 failResponse: function(msg){
     alert(msg || 'Please try again');
-}
+},
 //form validation: non-null, number, email
 validate: function(value, type){
  var value = $.trim(value);
  //非空验证
- if('require' === type){
-     return !!value;
- }
+     if('require' === type){
+         return !!value;
+     }
  //手机号
- if('phone' === type){
-     return ^(\([0-9]{3}\)|[0-9]{3}-)[0-9]{3}-[0-9]{4}$/.test(value);
- }
+     if('phone' === type){
+         var phoneNumberPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+        return phoneNumberPattern.test(value);
+     }
  //email
  if('email' === type){
-     var reg= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-     return reg.test(value)
+     var regEmail= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+     return regEmail.test(value)
  }
-}
+},
 // after login window change
 doLogin : function(){
     window.location.href = './login.html?redirect=' + encodeURLComponent(window.location.href);
