@@ -16,6 +16,7 @@ var getHtmlConfig = function(name, title){
         chunks      : ['common', name]
     };
 };
+
 // webpack config
 var config = {
     entry: {
@@ -57,11 +58,17 @@ var config = {
         }
     },
     plugins:[
+      //js/base.js
       new webpack.optimize.CommonsChunkPlugin({
         name:'common',
         filename:'js/base.js'
       }),
-      new ExtractTextPlugin("css/{[name]}.css"),
+      //css
+      new ExtractTextPlugin("css/[name].css"),
+      //html template
+      new HtmlWebpackPlugin(getHtmlConfig('index')),
+      new HtmlWebpackPlugin(getHtmlConfig('login'))
+
     ]
 
 };
