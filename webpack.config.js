@@ -55,7 +55,14 @@ var config = {
             service         : __dirname + '/src/service',
             image           : __dirname + '/src/image'
         }
-    }
+    },
+    plugins:[
+      new webpack.optimize.CommonsChunkPlugin({
+        name:'common',
+        filename:'js/base.js'
+      }),
+      new ExtractTextPlugin("css/{[name]}.css"),
+    ]
 
 };
 
