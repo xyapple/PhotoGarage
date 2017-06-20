@@ -7,3 +7,6 @@
   <title>Photo Garage</title>
 </head>
 ```
+# Common JS tools
+* http
+* url-loader

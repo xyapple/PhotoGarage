@@ -9,7 +9,6 @@
     "dist_win": "set WEBPACK_ENV=online && webpack -p",
     "build": "rm -rf ./build && NODE_ENV=dev webpack --config ./webpack.config.js --progress --colors"
   },
-
   "author": "Yin Deascentis",
   "license": "ISC",
   "devDependencies": {
@@ -25,6 +24,7 @@
   "dependencies": {
     "font-awesome": "^4.7.0",
     "hogan": "^1.0.2",
+    "hogan.js": "^3.0.2",
     "webpack-dev-server": "^1.16.3"
   }
 }
