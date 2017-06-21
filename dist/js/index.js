@@ -3,34 +3,94 @@ webpackJsonp([3],{
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(84);
+	module.exports = __webpack_require__(94);
 
 
 /***/ }),
 
-/***/ 84:
+/***/ 94:
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	'use strict'
+	__webpack_require__(95);
+	__webpack_require__(102);
+	var navSide = __webpack_require__(107);
+	var _pg = __webpack_require__(98);
 
-	var _pg = __webpack_require__(85);
-
-	var html='<div>{{data}}</div>';
-	var data ={
-	    data : 'test'
-	}
-	console.log(_pg.renderHtml(html, data));
+	navSide.init({
+	    name: 'user-center'
+	});
 
 
 /***/ }),
 
-/***/ 85:
+/***/ 95:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	__webpack_require__(96);
+
+	var _pg = __webpack_require__(98);
+
+	var header ={
+	    init: function(){
+	        this.onLoad();
+	        this.bindEvent();
+	    },
+	    onLoad: function () {
+	        var keyword = _pg.getUrlParam('keyword');
+
+	        if(keyword){
+	            $('#search-input').val(keyword);
+	        };
+	    },
+	    bindEvent: function(){
+	        var _this = this;
+	        $('#search-btn').click(function(){
+	            _this.searchSubmit();
+	        });
+
+	        // 13是回车键的keyCode
+	        $('#search-input').keyup(function(e){
+	            if(e.keyCode === 13){
+	                _this.searchSubmit();
+	                console.log('hi')
+	            }
+	        });
+	    },
+	    //submit search
+	    searchSubmit: function(){
+	            var keyword = $.trim($('#search-input').val());
+	            //if keyword is good, render to list page
+	            if(keyword){
+	                window.location.href= './list.html?keyword=' + keyword;
+	                //if keyword is not here, return home page
+	            } else{
+	                _pg.renderHtml();
+	            }
+	    }
+
+	};
+
+	header.init();
+
+
+/***/ }),
+
+/***/ 96:
+/***/ (function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 98:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict'
 
-	var hogan = __webpack_require__(86);
+	var hogan = __webpack_require__(99);
 
 	var conf = {
 	    serverHost : ''
@@ -73,7 +133,7 @@ webpackJsonp([3],{
 	    //get 'ketword=xxx&page=1'
 	    var reg    = new RegExp('(^|&)' + name + ' =([^&]*)(&|$)');
 	    var result = window.location.search.substr(1).match(reg);
-	    return result ? decodeURLComponent(result[2]) : null;
+	    return result ? decodeURIComponent(result[2]) : null;
 	},
 	//render html template by hogan
 	renderHtml: function(htmlTemplate, data){
@@ -86,8 +146,8 @@ webpackJsonp([3],{
 	    alert(msg || 'U had completed');
 	},
 	//fails response for user login
-	failResponse: function(msg){
-	    alert(msg || 'Please try again');
+	failResponse: function(errMsg){
+	    alert(errMsg || 'Please try again');
 	},
 	//form validation: non-null, number, email
 	validate: function(value, type){
@@ -109,7 +169,7 @@ webpackJsonp([3],{
 	},
 	// after login window change
 	doLogin : function(){
-	    window.location.href = './login.html?redirect=' + encodeURLComponent(window.location.href);
+	    window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
 	},
 	//return home
 	returnHome: function () {
@@ -123,7 +183,7 @@ webpackJsonp([3],{
 
 /***/ }),
 
-/***/ 86:
+/***/ 99:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -143,15 +203,15 @@ webpackJsonp([3],{
 
 	// This file is for use with Node.js. See dist/ for browser files.
 
-	var Hogan = __webpack_require__(87);
-	Hogan.Template = __webpack_require__(88).Template;
+	var Hogan = __webpack_require__(100);
+	Hogan.Template = __webpack_require__(101).Template;
 	Hogan.template = Hogan.Template;
 	module.exports = Hogan;
 
 
 /***/ }),
 
-/***/ 87:
+/***/ 100:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -581,7 +641,7 @@ webpackJsonp([3],{
 
 /***/ }),
 
-/***/ 88:
+/***/ 101:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -926,6 +986,193 @@ webpackJsonp([3],{
 
 	})( true ? exports : Hogan);
 
+
+/***/ }),
+
+/***/ 102:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	__webpack_require__(103);
+	var _pg = __webpack_require__(98);
+	var _user = __webpack_require__(105);
+	var _cart = __webpack_require__(106);
+
+
+	var nav ={
+	    init: function(){
+	        this.bindEvent();
+	        this.loadUserInfo();
+	        this.loadCartCount();
+	        return this;
+	    },
+	    bindEvent: function(){
+	        //login click
+	        $('.js-login').click(function(){
+	            _pg.doLogin();
+	        });
+	        //rigister click
+	        $('.js-register').click(function(){
+	            window.location.href='./register.html'
+	        });
+	        //logout click
+	        $('js-logout').click(function () {
+	            _user.logout(function(res){
+	                window.location.reload();
+	            }, function(){
+	            _pg.failResponse(errMsg);
+	            });
+
+	        })
+
+	    },
+	    //load user info
+	    loadUserInfo: function(){
+	        _user.checkLogin(function(res){
+	            $('.user.before-login').hide().siblings('.user.login').show()
+	            .find('.username').text(res.username);
+	        }, function(){
+	            //do nothing
+	        });
+	    },
+
+	    //load shoping cart
+	    loadCartCount: function(){
+	        _cart.getCartCount(function (res) {
+	            $('.nav .cart-count').text(res || 0);
+	        }, function (errMsg) {
+	            $('.nav .cart-count').text(0);
+	        });
+	    }
+	};
+
+	module.exports = nav.init();
+
+
+/***/ }),
+
+/***/ 103:
+/***/ (function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 105:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict'
+
+	var _pg = __webpack_require__(98);
+
+	var _user = {
+	    //check user login
+	    checkLogin: function (resolve, reject) {
+	        _pg.request({
+	            url: _pg.getServerUrl('/user/get_user_info.do'),
+	            method: 'POST',
+	            success: resolve,
+	            error: reject
+	        })
+	    },
+
+	    //user logout
+	    logout: function (resolve, reject) {
+	        _pg.request({
+	            url: _pg.getServerUrl('/user/logout.do'),
+	            method: 'POST',
+	            success: resolve,
+	            error: reject
+	        })
+	    }
+	}
+	module.exports = _user
+
+
+/***/ }),
+
+/***/ 106:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict'
+	var _pg = __webpack_require__(98);
+
+	var _cart = {
+
+	    //cart cart count
+	    getCartCount: function (resolve, reject) {
+	        _pg.request({
+	            url: _pg.getServerUrl('/cart/get_cart_product_count.do'),
+	            success: resolve,
+	            error: reject
+	        });
+	    }
+	};
+	module.exports = _cart;
+
+
+/***/ }),
+
+/***/ 107:
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	__webpack_require__(108);
+	var _pg = __webpack_require__(98);
+	var templateIndex   = __webpack_require__(110);
+
+
+	//nav-sider bar
+	var navSide = {
+	    option: {
+	        name: '',
+	        navList:[
+	            {name: 'user-center', desc: 'User Center', href: './user-center.html'},
+	            { name: 'order-list', desc: 'My Order', href: './order-list.html'},
+	        {name: 'user-pass-update', desc: 'Change Password', href: './user-pass-update.html'},
+	        { name: 'about',desc: 'About PhotoGarage',href: '../about.html'}
+	    ]
+
+	    },
+	    init: function(option){
+	        //合并选项
+	        $.extend(this.option, option);
+	        this.renderNav();
+	    },
+	    //render sidebar
+	    renderNav: function(){
+	        //计算Active 数据
+	        for(var i = 0, iLength = this.option.navList.length; i < iLength; i++){
+	            if(this.option.navList[i].name === this.option.name){
+	                this.option.navList[i].isActive = true;
+	            }
+	        };
+	        //render list数据 from index.string templateIndex
+	        var navHtml = _pg.renderHtml(templateIndex, {
+	            navList: this.option.navList
+	        });
+	        $('.nav-side').html(navHtml);
+
+	    }
+
+	};
+
+	module.exports = navSide;
+
+
+/***/ }),
+
+/***/ 108:
+/***/ (function(module, exports) {
+
+	// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ 110:
+/***/ (function(module, exports) {
+
+	module.exports = "{{#navList}}\n{{#isActive}}\n<li class=\"nav-item active\">\n{{/isActive}}\n{{^isActive}}\n<li class=\"nav-item\">\n{{/isActive}}\n    <a class=\"link\" href=\"{{href}}\">{{desc}}</a>\n</li>\n{{/navList}} \n";
 
 /***/ })
 
