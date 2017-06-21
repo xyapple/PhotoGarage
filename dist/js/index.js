@@ -3,34 +3,34 @@ webpackJsonp([3],{
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(78);
+	module.exports = __webpack_require__(84);
 
 
 /***/ }),
 
-/***/ 78:
+/***/ 84:
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	'use strict'
 
-	var _pg = __webpack_require__(79);
+	var _pg = __webpack_require__(85);
 
 	var html='<div>{{data}}</div>';
 	var data ={
-	    data : 123
+	    data : 'test'
 	}
-	console.log(_pg.renderHtml(html,data));
+	console.log(_pg.renderHtml(html, data));
 
 
 /***/ }),
 
-/***/ 79:
+/***/ 85:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict'
 
-	var hogan = __webpack_require__(80);
+	var hogan = __webpack_require__(86);
 
 	var conf = {
 	    serverHost : ''
@@ -78,12 +78,43 @@ webpackJsonp([3],{
 	//render html template by hogan
 	renderHtml: function(htmlTemplate, data){
 	    var template    = hogan.compile(htmlTemplate)
-	     result       = template.render(data);
+	     var result       = template.render(data);
 	    return result;
+	},
+	// success response for user login
+	successResponse : function(msg){
+	    alert(msg || 'U had completed');
+	},
+	//fails response for user login
+	failResponse: function(msg){
+	    alert(msg || 'Please try again');
+	},
+	//form validation: non-null, number, email
+	validate: function(value, type){
+	 var value = $.trim(value);
+	 //非空验证
+	     if('require' === type){
+	         return !!value;
+	     }
+	 //手机号
+	     if('phone' === type){
+	         var phoneNumberPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+	        return phoneNumberPattern.test(value);
+	     }
+	 //email
+	 if('email' === type){
+	     var regEmail= /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	     return regEmail.test(value)
+	 }
 	},
 	// after login window change
 	doLogin : function(){
 	    window.location.href = './login.html?redirect=' + encodeURLComponent(window.location.href);
+	},
+	//return home
+	returnHome: function () {
+	    window.location.href = './index.html';
+
 	}
 	};
 
@@ -92,7 +123,7 @@ webpackJsonp([3],{
 
 /***/ }),
 
-/***/ 80:
+/***/ 86:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -112,15 +143,15 @@ webpackJsonp([3],{
 
 	// This file is for use with Node.js. See dist/ for browser files.
 
-	var Hogan = __webpack_require__(81);
-	Hogan.Template = __webpack_require__(82).Template;
+	var Hogan = __webpack_require__(87);
+	Hogan.Template = __webpack_require__(88).Template;
 	Hogan.template = Hogan.Template;
 	module.exports = Hogan;
 
 
 /***/ }),
 
-/***/ 81:
+/***/ 87:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -550,7 +581,7 @@ webpackJsonp([3],{
 
 /***/ }),
 
-/***/ 82:
+/***/ 88:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*

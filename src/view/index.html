@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-<!-- require from tem -->
-<%= require('html-loader!./tem/html-head.html') %>
-
+<head
+<%= require('html-loader!./layout/common-head.html') %>
+<title></title>
+</head>
 <body>
-  Hello Photo
-  <!-- Load jQuery-->
-  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
-
+<div>
+     <%= require('html-loader!./layout/nav-simple.html')%>
+    <a href='' class='link'>test</a>
+    <a href='' class='link-text'>test link-text</a>
+</div>
+<div>
+    <a href='' class='btn'>test button</a>
+    <a href='' class='btn btn-mini'>test button mini</a>
+    <i class='fa fa-user'></i>
+</div>
+<div class="loading"></div>
+ <%= require('html-loader!./layout/common-footer.html')%>
 </body>
 
 </html>
