@@ -22,7 +22,7 @@ var header ={
         });
 
         // 13是回车键的keyCode
-        $('#search-btn').keyup(function(e){
+        $('#search-input').keyup(function(e){
             if(e.keyCode === 13){
                 _this.searchSubmit();
                 console.log('hi')
