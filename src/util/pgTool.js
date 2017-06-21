@@ -43,7 +43,7 @@ getUrlParam: function(name){
     //get 'ketword=xxx&page=1'
     var reg    = new RegExp('(^|&)' + name + ' =([^&]*)(&|$)');
     var result = window.location.search.substr(1).match(reg);
-    return result ? decodeURLComponent(result[2]) : null;
+    return result ? decodeURIComponent(result[2]) : null;
 },
 //render html template by hogan
 renderHtml: function(htmlTemplate, data){
@@ -56,8 +56,8 @@ successResponse : function(msg){
     alert(msg || 'U had completed');
 },
 //fails response for user login
-failResponse: function(msg){
-    alert(msg || 'Please try again');
+failResponse: function(errMsg){
+    alert(errMsg || 'Please try again');
 },
 //form validation: non-null, number, email
 validate: function(value, type){
@@ -79,7 +79,7 @@ validate: function(value, type){
 },
 // after login window change
 doLogin : function(){
-    window.location.href = './login.html?redirect=' + encodeURLComponent(window.location.href);
+    window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
 },
 //return home
 returnHome: function () {
