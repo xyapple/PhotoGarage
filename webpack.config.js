@@ -68,6 +68,8 @@ var config = {
       //html template
       new HtmlWebpackPlugin(getHtmlConfig('index', 'Home')),
       new HtmlWebpackPlugin(getHtmlConfig('user-login', 'Login')),
+      new HtmlWebpackPlugin(getHtmlConfig('user-register', 'Register')),
+      new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', 'Password Reset')),
       new HtmlWebpackPlugin(getHtmlConfig('result', 'AfterLogin'))
 
     ]

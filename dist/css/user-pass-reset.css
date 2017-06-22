@@ -10,16 +10,16 @@
     color: #c60023;
     text-decoration: none;
 }
+/* 最外层容器 */
 .page-wrap{
     padding: 40px 0;
-    background: #e72955;
 }
 /* 表单框 */
 .user-con{
     position: relative;
     margin: 0 auto;
     width: 400px;
-    background: #fff;
+    background: #ffff;
 }
 .user-con .user-title{
     text-align: center;
@@ -50,7 +50,16 @@
     font-size: 14px;
     margin-top: -7px;
 }
-
+/* 每一步的容器 */
+.user-con .step-con{
+    display: none;
+}
+/* 输入框提示信息 */
+.user-con .user-item-text{
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+/* 输入框容器 */
 .user-con .user-item{
     position: relative;
     margin-bottom: 20px;

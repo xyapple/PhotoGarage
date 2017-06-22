@@ -6,8 +6,8 @@
 <meta name="keywords" content="photogarage, photo">
 <meta name="description" content="my photo garage">
 
-<title>Login - Welcom to PhotoGarage </title>
-<link href="/dist/css/common.css?3927a4a8b65a249b417a" rel="stylesheet"><link href="/dist/css/user-login.css?3927a4a8b65a249b417a" rel="stylesheet"></head>
+<title>Register - Welcom to PhotoGarage </title>
+<link href="/dist/css/common.css?3927a4a8b65a249b417a" rel="stylesheet"><link href="/dist/css/user-register.css?3927a4a8b65a249b417a" rel="stylesheet"></head>
 <body>
     <div class='nav-simple'>
     <div class='w'>
@@ -18,7 +18,7 @@
 <div class='page-wrap'>
     <div class='w'>
         <div class='user-con'>
-            <h1 class='user-title'>User Login </h1>
+            <h1 class='user-title'>User Register </h1>
             <div class='user-box'>
                 <div class='error-item'>
                     <i class='fa fa-minus-circle error-icon'></i>
@@ -36,10 +36,39 @@
                     </label>
                     <input type='text' class="user-content" id='password' placeholder="Please enter password" autocomplete="off"/>
                 </div>
-                <a href='' class='btn btn-submit' id="submit">LogIn</a>
+                <div class='user-item'>
+                    <label class="user-label" for="password-confirm">
+                        <i class="fa fa-lock"></i>
+                    </label>
+                    <input type='text' class="user-content" id='password-confirm' placeholder="Please confirm password" autocomplete="off"/>
+                </div>
+                <div class='user-item'>
+                    <label class="user-label" for="phone">
+                        <i class="fa fa-phone"></i>
+                    </label>
+                    <input type='text' class="user-content" id='phone' placeholder="Please enter phone" autocomplete="off"/>
+                </div>
+                <div class='user-item'>
+                    <label class="user-label" for="email">
+                        <i class="fa fa-envelope"></i>
+                    </label>
+                    <input type='text' class="user-content" id='email' placeholder="Please enter email" autocomplete="off"/>
+                </div>
+                <div class='user-item'>
+                    <label class="user-label" for="question">
+                        <i class="fa fa-question"></i>
+                    </label>
+                    <input type='text' class="user-content" id='question' placeholder="Please enter question" autocomplete="off"/>
+                </div>
+                <div class='user-item'>
+                    <label class="user-label" for="answer">
+                        <i class="fa fa-key"></i>
+                    </label>
+                    <input type='text' class="user-content" id='answer' placeholder="Please enter answer" autocomplete="off"/>
+                </div>
+                <a href='' class='btn btn-submit' id="submit">Reisger</a>
                 <div class='link-item'>
-                    <a href='./user-pass-reset.html' class='link' target="_blank">Forget Password</a>
-                    <a href='./user-register.html' class='link' target="_blank">Reisger</a>
+                    <a href='./user-register.html' class='link' target="_blank">Already a Member, LogIn>></a>
                 </div>
             </div>
         </div>
@@ -63,6 +92,6 @@
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-<script type="text/javascript" src="/dist/js/base.js?3927a4a8b65a249b417a"></script><script type="text/javascript" src="/dist/js/user-login.js?3927a4a8b65a249b417a"></script></body>
+<script type="text/javascript" src="/dist/js/base.js?3927a4a8b65a249b417a"></script><script type="text/javascript" src="/dist/js/user-register.js?3927a4a8b65a249b417a"></script></body>
 
 </html>

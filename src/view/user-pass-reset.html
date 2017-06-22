@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head <%=require('html-loader!./layout/common-head.html')%>
+    <title><%= htmlWebpackPlugin.options.title%> - Welcom to PhotoGarage </title>
+</head>
+
+<body>
+    <%= require('html-loader!./layout/nav-simple.html')  %>
+        <div class='page-wrap'>
+            <div class='w'>
+                <div class='user-con'>
+                    <h1 class='user-title'>Forget Password </h1>
+                    <div class='user-box'>
+                        <div class='error-item'>
+                            <i class='fa fa-minus-circle error-icon'></i>
+                            <p class='err-msg'>Error</p>
+                        </div>
+                        <div class="step-con step-username">
+                            <p class="user-item-text">Please Enter User Name：</p>
+                            <div class="user-item">
+                                <label class="user-label" for="">
+                                    <i class="fa fa-user"></i>
+                                </label>
+                                <input class="user-content" id="username" placeholder="Please Enter User Name" autocomplete="off">
+                            </div>
+                            <a class="btn btn-submit" id="submit-username">next</a>
+                        </div>
+                        <div class="step-con step-question">
+                            <p class="user-item-text">Password Question：<span class="question"></span></p>
+                            <div class="user-item">
+                                <label class="user-label" for="">
+                                        i class="fa fa-key"></i>
+                                            </label>
+                                <input class="user-content" id="answer" placeholder="Awnser" autocomplete="off">
+                            </div>
+                            <a class="btn btn-submit" id="submit-question">Next</a>
+                        </div>
+                        <div class="step-con step-password">
+                            <p class="user-item-text">Please enter Password: </p>
+                            <div class="user-item">
+                                <label class="user-label" for="">
+                                                <i class="fa fa-lock"></i>
+                                            </label>
+                                <input type="password" class="user-content" id="password" placeholder="Please enter Password" autocomplete="off">
+                            </div>
+                            <a class="btn btn-submit" id="submit-password">Next</a>
+                        </div>
+
+
+                        <div class='link-item'>
+                            <a href='./user-register.html' class='link' target="_blank">Return Login>></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%= require('html-loader!./layout/common-footer.html')%>
+</body>
+
+</html>
