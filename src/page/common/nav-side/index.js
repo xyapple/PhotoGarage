@@ -9,8 +9,8 @@ var navSide = {
     option: {
         name: '',
         navList:[
-            {name: 'user-center', desc: 'User Center', href: './user-center.html'},
-            { name: 'order-list', desc: 'My Order', href: './order-list.html'},
+        {name: 'user-center', desc: 'User Center', href: './user-center.html'},
+        { name: 'order-list', desc: 'My Order', href: './order-list.html'},
         {name: 'user-pass-update', desc: 'Change Password', href: './user-pass-update.html'},
         { name: 'about',desc: 'About PhotoGarage',href: '../about.html'}
     ]

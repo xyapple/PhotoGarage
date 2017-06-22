@@ -66,8 +66,9 @@ var config = {
       //css
       new ExtractTextPlugin("css/[name].css"),
       //html template
-      new HtmlWebpackPlugin(getHtmlConfig('index')),
-      new HtmlWebpackPlugin(getHtmlConfig('login'))
+      new HtmlWebpackPlugin(getHtmlConfig('index', 'Home')),
+      new HtmlWebpackPlugin(getHtmlConfig('login', 'Login')),
+      new HtmlWebpackPlugin(getHtmlConfig('result', 'AfterLogin'))
 
     ]
 

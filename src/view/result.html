@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head
+<%= require('html-loader!./layout/common-head.html') %>
+<title><%= htmlWebpackPlugin.options.title%> - Welcom to PhotoGarage </title>
+</head>
+<body>
+    <%= require('html-loader!./layout/nav-simple.html')  %>
+<div class='page-wrap w'>
+     <div class='result-con register-success'>
+         <h1 class='result-title'>Welcome, Register Success !</h1>
+         <div class='result-content'>
+             <a href='./index.html' class='link'>Back to Home</a>
+         </div>
+     </div>
+     <div class='result-con default-success'>
+         <h1 class='result-title'>Welcome to PhotoGarage !</h1>
+         <div class='result-content'>
+             <a href='./index.html' class='link'>Back to Home</a>
+         </div>
+     </div>
+</div>
+ <%= require('html-loader!./layout/common-footer.html')%>
+</body>
+
+</html>
