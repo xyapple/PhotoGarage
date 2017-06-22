@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head
+<%= require('html-loader!./layout/common-head.html') %>
+<title><%= htmlWebpackPlugin.options.title%> - Welcom to PhotoGarage </title>
+</head>
+<body>
+    <%= require('html-loader!./layout/nav-simple.html')  %>
+<div class='page-wrap'>
+    <div class='w'>
+        <div class='user-con'>
+            <h1 class='user-title'>User Login </h1>
+            <div class='user-box'>
+                <div class='error-item'>
+                    <i class='fa fa-minus-circle error-icon'></i>
+                    <p class='err-msg'>Error</p>
+                </div>
+                <div class='user-item'>
+                    <label class="user-label" for="">
+                        <i class="fa fa-user"></i>
+                    </label>
+                    <input type='text' class="user-content" id='username' placeholder="Please enter user name" autocomplete="off"/>
+                </div>
+                <div class='user-item'>
+                    <label class="user-label" for="password">
+                        <i class="fa fa-lock"></i>
+                    </label>
+                    <input type='text' class="user-content" id='password' placeholder="Please enter password" autocomplete="off"/>
+                </div>
+                <a href='' class='btn btn-submit' id="submit">LogIn</a>
+                <div class='link-item'>
+                    <a href='./user-pass-reset.html' class='link' target="_blank">Forget Password</a>
+                    <a href='./user-register.html' class='link' target="_blank">Reisger</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ <%= require('html-loader!./layout/common-footer.html')%>
+</body>
+
+</html>

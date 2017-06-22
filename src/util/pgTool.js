@@ -79,7 +79,7 @@ validate: function(value, type){
 },
 // after login window change
 doLogin : function(){
-    window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+    window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
 },
 //return home
 returnHome: function () {

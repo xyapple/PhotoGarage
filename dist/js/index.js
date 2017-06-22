@@ -19,7 +19,7 @@ webpackJsonp([3],{
 	var _pg = __webpack_require__(98);
 
 	navSide.init({
-	    name: 'user-center'
+	    name: 'order-list'
 	});
 
 
@@ -169,7 +169,7 @@ webpackJsonp([3],{
 	},
 	// after login window change
 	doLogin : function(){
-	    window.location.href = './login.html?redirect=' + encodeURIComponent(window.location.href);
+	    window.location.href = './user-login.html?redirect=' + encodeURIComponent(window.location.href);
 	},
 	//return home
 	returnHome: function () {
@@ -1127,8 +1127,8 @@ webpackJsonp([3],{
 	    option: {
 	        name: '',
 	        navList:[
-	            {name: 'user-center', desc: 'User Center', href: './user-center.html'},
-	            { name: 'order-list', desc: 'My Order', href: './order-list.html'},
+	        {name: 'user-center', desc: 'User Center', href: './user-center.html'},
+	        { name: 'order-list', desc: 'My Order', href: './order-list.html'},
 	        {name: 'user-pass-update', desc: 'Change Password', href: './user-pass-update.html'},
 	        { name: 'about',desc: 'About PhotoGarage',href: '../about.html'}
 	    ]
