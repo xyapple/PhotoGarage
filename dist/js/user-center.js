@@ -3,7 +3,7 @@ webpackJsonp([6],{
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(118);
+	module.exports = __webpack_require__(138);
 
 
 /***/ }),
@@ -1196,13 +1196,13 @@ webpackJsonp([6],{
 
 /***/ }),
 
-/***/ 107:
+/***/ 113:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	__webpack_require__(108);
+	__webpack_require__(114);
 	var _pg = __webpack_require__(98);
-	var templateIndex   = __webpack_require__(110);
+	var templateIndex   = __webpack_require__(116);
 
 
 	//nav-sider bar
@@ -1245,31 +1245,31 @@ webpackJsonp([6],{
 
 /***/ }),
 
-/***/ 108:
+/***/ 114:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 110:
+/***/ 116:
 /***/ (function(module, exports) {
 
 	module.exports = "{{#navList}}\n{{#isActive}}\n<li class=\"nav-item active\">\n{{/isActive}}\n{{^isActive}}\n<li class=\"nav-item\">\n{{/isActive}}\n    <a class=\"link\" href=\"{{href}}\">{{desc}}</a>\n</li>\n{{/navList}} \n";
 
 /***/ }),
 
-/***/ 118:
+/***/ 138:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict'
-	__webpack_require__(119)
+	__webpack_require__(139)
 	__webpack_require__(95);
 	__webpack_require__(102);
-	var navSide = __webpack_require__(107);
+	var navSide = __webpack_require__(113);
 	var _pg = __webpack_require__(98);
 	var _user  = __webpack_require__(105);
-	var templateIndex   = __webpack_require__(121);
+	var templateIndex   = __webpack_require__(141);
 
 
 	var page={
@@ -1300,14 +1300,14 @@ webpackJsonp([6],{
 
 /***/ }),
 
-/***/ 119:
+/***/ 139:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 121:
+/***/ 141:
 /***/ (function(module, exports) {
 
 	module.exports = "<div class=\"user-info\">\n    <div class=\"form-line\">\n        <span class=\"label\">User Name: </span>\n        span class=\"text\">{{username}}</span>\n    </div>\n    <div class=\"form-line\">\n        <span class=\"label\">User Phone: </span>\n        <span class=\"text\">{{phone}}</span>\n    </div>\n\n    <div class=\"form-line\">\n        <span class=\"label\">User Email: </span>\n        <span class=\"text\">{{email}}</span>\n    </div>\n\n    <div class=\"form-line\">\n        <span class=\"label\">User Question: </span>\n        <span class=\"text\">{{question}}</span>\n    </div>\n    <div class=\"form-line\">\n        <span class=\"label\">User Answer: </span>\n        <span class=\"text\">{{answe}}</span>\n    </div>\n    <div class=\"form-line\">\n        <a class=\"btn btn-submit\" href=\"./user-center-update.html\">Submit</a>\n    </div>\n\n\n\n    </form>\n</div>\n";

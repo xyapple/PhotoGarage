@@ -3,7 +3,7 @@ webpackJsonp([10],{
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(132);
+	module.exports = __webpack_require__(152);
 
 
 /***/ }),
@@ -1196,13 +1196,13 @@ webpackJsonp([10],{
 
 /***/ }),
 
-/***/ 107:
+/***/ 113:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	__webpack_require__(108);
+	__webpack_require__(114);
 	var _pg = __webpack_require__(98);
-	var templateIndex   = __webpack_require__(110);
+	var templateIndex   = __webpack_require__(116);
 
 
 	//nav-sider bar
@@ -1245,28 +1245,28 @@ webpackJsonp([10],{
 
 /***/ }),
 
-/***/ 108:
+/***/ 114:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 110:
+/***/ 116:
 /***/ (function(module, exports) {
 
 	module.exports = "{{#navList}}\n{{#isActive}}\n<li class=\"nav-item active\">\n{{/isActive}}\n{{^isActive}}\n<li class=\"nav-item\">\n{{/isActive}}\n    <a class=\"link\" href=\"{{href}}\">{{desc}}</a>\n</li>\n{{/navList}} \n";
 
 /***/ }),
 
-/***/ 132:
+/***/ 152:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	__webpack_require__(133);
+	__webpack_require__(153);
 	__webpack_require__(102);
 	__webpack_require__(95);
-	var navSide         = __webpack_require__(107);
+	var navSide         = __webpack_require__(113);
 	var _pg             = __webpack_require__(98);
 	var _user           = __webpack_require__(105);
 
@@ -1342,7 +1342,7 @@ webpackJsonp([10],{
 
 /***/ }),
 
-/***/ 133:
+/***/ 153:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

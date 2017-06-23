@@ -3,7 +3,7 @@ webpackJsonp([7],{
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(122);
+	module.exports = __webpack_require__(142);
 
 
 /***/ }),
@@ -1196,13 +1196,13 @@ webpackJsonp([7],{
 
 /***/ }),
 
-/***/ 107:
+/***/ 113:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	__webpack_require__(108);
+	__webpack_require__(114);
 	var _pg = __webpack_require__(98);
-	var templateIndex   = __webpack_require__(110);
+	var templateIndex   = __webpack_require__(116);
 
 
 	//nav-sider bar
@@ -1245,31 +1245,31 @@ webpackJsonp([7],{
 
 /***/ }),
 
-/***/ 108:
+/***/ 114:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 110:
+/***/ 116:
 /***/ (function(module, exports) {
 
 	module.exports = "{{#navList}}\n{{#isActive}}\n<li class=\"nav-item active\">\n{{/isActive}}\n{{^isActive}}\n<li class=\"nav-item\">\n{{/isActive}}\n    <a class=\"link\" href=\"{{href}}\">{{desc}}</a>\n</li>\n{{/navList}} \n";
 
 /***/ }),
 
-/***/ 122:
+/***/ 142:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict';
-	__webpack_require__(123);
+	__webpack_require__(143);
 	__webpack_require__(102);
 	__webpack_require__(95);
-	var navSide = __webpack_require__(107);
+	var navSide = __webpack_require__(113);
 	var _pg = __webpack_require__(98);
 	var _user  = __webpack_require__(105);
-	var templateIndex   = __webpack_require__(125);
+	var templateIndex   = __webpack_require__(145);
 
 	// page 逻辑部分
 	var page = {
@@ -1359,14 +1359,14 @@ webpackJsonp([7],{
 
 /***/ }),
 
-/***/ 123:
+/***/ 143:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 125:
+/***/ 145:
 /***/ (function(module, exports) {
 
 	module.exports = "<div class=\"user-info\">\n    <div class=\"form-line\">\n        <span class=\"label\">User Name:</span>\n        <span class=\"text\">{{username}}</span>\n    </div>\n    <div class=\"form-line\">\n        <span class=\"label\">Phone：</span>\n        <input class=\"input\" id=\"phone\" autocomplete=\"off\" value=\"{{phone}}\" />\n    </div>\n    <div class=\"form-line\">\n        <span class=\"label\">Email：</span>\n        <input class=\"input\" id=\"email\" autocomplete=\"off\" value=\"{{email}}\" />\n    </div>\n    <div class=\"form-line\">\n        <span class=\"label\">Question：</span>\n        <input class=\"input\" id=\"question\" autocomplete=\"off\" value=\"{{question}}\" />\n    </div>\n    <div class=\"form-line\">\n        <span class=\"label\">Answer：</span>\n        <input class=\"input\" id=\"answer\" autocomplete=\"off\" value=\"{{answer}}\" />\n    </div>\n    <span class=\"btn btn-submit\">Submit</span>\n</div>\n";

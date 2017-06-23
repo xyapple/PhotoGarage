@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html>
-
+<html >
 <head>
      <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -8,12 +7,10 @@
 <meta name="description" content="my photo garage">
 
     <title>
-        User Center - Welcom to PhotoGarage </title>
-<link href="/dist/css/common.css?568c7ade500a4b79a107" rel="stylesheet"><link href="/dist/css/user-center.css?568c7ade500a4b79a107" rel="stylesheet"></head>
-
-<body>
-
-    <div class='nav'>
+        商品列表页 - Welcom to PhotoGarage </title>
+<link href="/dist/css/common.css?568c7ade500a4b79a107" rel="stylesheet"><link href="/dist/css/list.css?568c7ade500a4b79a107" rel="stylesheet"></head>
+    <body>
+        <div class='nav'>
     <div class='w'>
         <div class='user-info'>
             <span class='user before-login'>
@@ -59,32 +56,32 @@
     </d>
 </div>
 
-
-            <div class="crumb">
-                <div class="w">
-                    <div class="crumb-con">
-                        <a class="link" href="./index.html">MMall</a>
-                        <span>></span>
-                        <span class="link-text">User Center</span>
-                    </div>
+        <div class="crumb">
+            <div class="w">
+                <div class="crumb-con">
+                    <a class="link" href="./index.html">PhotoGarage</a>
+                    <span>></span>
+                    <span class="link-text">商品列表页</span>
                 </div>
             </div>
-            <div class='page-wrap w'>
-                <ul class='nav-side'>
-</ul>
-
-                    <div class="content with-nav">
-                        <div class="panel">
-                            <div class="panel-title">User Center</div>
-                            <div class="panel-body">
-                                <div class="loading">
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <!-- Load jQuery-->
+        </div>
+        <div class="page-wrap w">
+            <ul class="sort-con">
+                <li class="sort-item " data-type="default">Oder</li>
+                <li class="sort-item active" data-type="price">
+                    <span>Price</span>
+                    <i class="fa fa-sort-asc"></i>
+                    <i class="fa fa-sort-desc"></i>
+                </li>
+            </ul>
+            <!-- list 容器 -->
+            <ul class="p-list-con">
+                
+            </ul>
+            <!-- 分页容器 -->
+            <div class="pagination"></div>
+        </div>
+        <!-- Load jQuery-->
 <div class='footer'>
     <div class='w'>
         <div class='links'>
@@ -102,6 +99,5 @@
 </div>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
-<script type="text/javascript" src="/dist/js/base.js?568c7ade500a4b79a107"></script><script type="text/javascript" src="/dist/js/user-center.js?568c7ade500a4b79a107"></script></body>
-
+    <script type="text/javascript" src="/dist/js/base.js?568c7ade500a4b79a107"></script><script type="text/javascript" src="/dist/js/list.js?568c7ade500a4b79a107"></script></body>
 </html>

@@ -74,6 +74,9 @@ var config = {
      new HtmlWebpackPlugin(getHtmlConfig('user-center-update', 'User Info Update')),
      new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', 'User Password Update')),
       new HtmlWebpackPlugin(getHtmlConfig('result', 'AfterLogin')),
+      new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
+        new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
+
 
     ]
 
