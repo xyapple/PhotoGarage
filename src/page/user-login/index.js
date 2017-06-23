@@ -3,6 +3,7 @@ require('./index.css');
 require('page/common/nav-simple/index.js');
 var _user   = require('service/user-service.js');
 var _pg = require('util/pgTool.js');
+
 // 表单里的错误提示
 var formError = {
     show : function(errMsg){

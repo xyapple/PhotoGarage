@@ -1,1 +1,4 @@
-console.log('what is it?')
+'use strict';
+module.exports = {
+    test: 1234
+}
