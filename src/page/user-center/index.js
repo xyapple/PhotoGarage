@@ -1,10 +1,11 @@
 'use strict'
+require('./index.css')
 require('page/common/header/index.js');
 require('page/common/nav/index.js');
 var navSide = require('page/common/nav-side/index.js');
 var _pg = require('util/pgTool.js');
-var _user   = require('service/user-service.js');
-
+var _user  = require('service/user-service.js');
+var templateIndex   = require('./index.string');
 
 
 var page={
@@ -24,7 +25,7 @@ var page={
             userHtml = _pg.renderHtml(templateIndex, res);
             $('.panel-body').html(userHtml);
         }, function(errMsg){
-            _pg.errorTips(errMsg);
+            _pg.failResponse(errMsg);
         });
     }
 }
