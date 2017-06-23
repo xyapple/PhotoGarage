@@ -3,7 +3,7 @@ webpackJsonp([8],{
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(120);
+	module.exports = __webpack_require__(126);
 
 
 /***/ }),
@@ -915,30 +915,29 @@ webpackJsonp([8],{
 /***/ 105:
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict'
+	/*
+	* @Author: Rosen
+	* @Date:   2017-05-17 17:04:32
+	* @Last Modified by:   Rosen
+	* @Last Modified time: 2017-05-24 17:11:19
+	*/
+
+	'use strict';
 
 	var _pg = __webpack_require__(98);
 
 	var _user = {
-	    //check user login
-	    checkLogin: function (resolve, reject) {
+	    // 用户登录
+	    login : function(userInfo, resolve, reject){
 	        _pg.request({
-	            url: _pg.getServerUrl('/user/get_user_info.do'),
-	            method: 'POST',
-	            success: resolve,
-	            error: reject
-	        })
+	            url     : _pg.getServerUrl('/user/login.do'),
+	            data    : userInfo,
+	            method  : 'POST',
+	            success : resolve,
+	            error   : reject
+	        });
 	    },
-
-	    //user logout
-	    logout: function (resolve, reject) {
-	        _pg.request({
-	            url: _pg.getServerUrl('/user/logout.do'),
-	            method: 'POST',
-	            success: resolve,
-	            error: reject
-	        })
-	    },
+	    // 检查用户名
 	    checkUsername : function(username, resolve, reject){
 	        _pg.request({
 	            url     : _pg.getServerUrl('/user/check_valid.do'),
@@ -946,6 +945,25 @@ webpackJsonp([8],{
 	                type    : 'username',
 	                str     : username
 	            },
+	            method  : 'POST',
+	            success : resolve,
+	            error   : reject
+	        });
+	    },
+	    // 用户注册
+	    register : function(userInfo, resolve, reject){
+	        _pg.request({
+	            url     : _pg.getServerUrl('/user/register.do'),
+	            data    : userInfo,
+	            method  : 'POST',
+	            success : resolve,
+	            error   : reject
+	        });
+	    },
+	    // 检查登录状态
+	    checkLogin : function(resolve, reject){
+	        _pg.request({
+	            url     : _pg.getServerUrl('/user/get_user_info.do'),
 	            method  : 'POST',
 	            success : resolve,
 	            error   : reject
@@ -1012,26 +1030,17 @@ webpackJsonp([8],{
 	            error   : reject
 	        });
 	    },
-	    // 检查登录状态
-	        checkLogin : function(resolve, reject){
-	            _pg.request({
-	                url     : _pg.getServerUrl('/user/get_user_info.do'),
-	                method  : 'POST',
-	                success : resolve,
-	                error   : reject
-	            });
-	        },
-	    register : function(userInfo, resolve, reject){
-	    _pg.request({
-	        url     : _pg.getServerUrl('/user/register.do'),
-	        data    : userInfo,
-	        method  : 'POST',
-	        success : resolve,
-	        error   : reject
-	    });
+	    // 登出
+	    logout : function(resolve, reject){
+	        _pg.request({
+	            url     : _pg.getServerUrl('/user/logout.do'),
+	            method  : 'POST',
+	            success : resolve,
+	            error   : reject
+	        });
+	    }
 	}
-	}
-	module.exports = _user
+	module.exports = _user;
 
 
 /***/ }),
@@ -1052,14 +1061,15 @@ webpackJsonp([8],{
 
 /***/ }),
 
-/***/ 120:
+/***/ 126:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict'
-	__webpack_require__(121);
+	__webpack_require__(127);
 	__webpack_require__(115);
 	var _user   = __webpack_require__(105);
 	var _pg = __webpack_require__(98);
+
 	// 表单里的错误提示
 	var formError = {
 	    show : function(errMsg){
@@ -1100,7 +1110,7 @@ webpackJsonp([8],{
 	        // 验证成功
 	        if(validateResult.status){
 	            _user.login(formData, function(res){
-	                window.location.href = _pg.getUrlParam('redirect') || './index.html';
+	                    window.location.href = _pg.getUrlParam('redirect') || './index.html';
 	            }, function(errMsg){
 	                formError.show(errMsg);
 	            });
@@ -1139,7 +1149,7 @@ webpackJsonp([8],{
 
 /***/ }),
 
-/***/ 121:
+/***/ 127:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

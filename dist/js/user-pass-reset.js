@@ -3,7 +3,7 @@ webpackJsonp([9],{
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(123);
+	module.exports = __webpack_require__(129);
 
 
 /***/ }),
@@ -915,30 +915,29 @@ webpackJsonp([9],{
 /***/ 105:
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict'
+	/*
+	* @Author: Rosen
+	* @Date:   2017-05-17 17:04:32
+	* @Last Modified by:   Rosen
+	* @Last Modified time: 2017-05-24 17:11:19
+	*/
+
+	'use strict';
 
 	var _pg = __webpack_require__(98);
 
 	var _user = {
-	    //check user login
-	    checkLogin: function (resolve, reject) {
+	    // 用户登录
+	    login : function(userInfo, resolve, reject){
 	        _pg.request({
-	            url: _pg.getServerUrl('/user/get_user_info.do'),
-	            method: 'POST',
-	            success: resolve,
-	            error: reject
-	        })
+	            url     : _pg.getServerUrl('/user/login.do'),
+	            data    : userInfo,
+	            method  : 'POST',
+	            success : resolve,
+	            error   : reject
+	        });
 	    },
-
-	    //user logout
-	    logout: function (resolve, reject) {
-	        _pg.request({
-	            url: _pg.getServerUrl('/user/logout.do'),
-	            method: 'POST',
-	            success: resolve,
-	            error: reject
-	        })
-	    },
+	    // 检查用户名
 	    checkUsername : function(username, resolve, reject){
 	        _pg.request({
 	            url     : _pg.getServerUrl('/user/check_valid.do'),
@@ -946,6 +945,25 @@ webpackJsonp([9],{
 	                type    : 'username',
 	                str     : username
 	            },
+	            method  : 'POST',
+	            success : resolve,
+	            error   : reject
+	        });
+	    },
+	    // 用户注册
+	    register : function(userInfo, resolve, reject){
+	        _pg.request({
+	            url     : _pg.getServerUrl('/user/register.do'),
+	            data    : userInfo,
+	            method  : 'POST',
+	            success : resolve,
+	            error   : reject
+	        });
+	    },
+	    // 检查登录状态
+	    checkLogin : function(resolve, reject){
+	        _pg.request({
+	            url     : _pg.getServerUrl('/user/get_user_info.do'),
 	            method  : 'POST',
 	            success : resolve,
 	            error   : reject
@@ -1012,26 +1030,17 @@ webpackJsonp([9],{
 	            error   : reject
 	        });
 	    },
-	    // 检查登录状态
-	        checkLogin : function(resolve, reject){
-	            _pg.request({
-	                url     : _pg.getServerUrl('/user/get_user_info.do'),
-	                method  : 'POST',
-	                success : resolve,
-	                error   : reject
-	            });
-	        },
-	    register : function(userInfo, resolve, reject){
-	    _pg.request({
-	        url     : _pg.getServerUrl('/user/register.do'),
-	        data    : userInfo,
-	        method  : 'POST',
-	        success : resolve,
-	        error   : reject
-	    });
+	    // 登出
+	    logout : function(resolve, reject){
+	        _pg.request({
+	            url     : _pg.getServerUrl('/user/logout.do'),
+	            method  : 'POST',
+	            success : resolve,
+	            error   : reject
+	        });
+	    }
 	}
-	}
-	module.exports = _user
+	module.exports = _user;
 
 
 /***/ }),
@@ -1052,11 +1061,11 @@ webpackJsonp([9],{
 
 /***/ }),
 
-/***/ 123:
+/***/ 129:
 /***/ (function(module, exports, __webpack_require__) {
 
 	'use strict'
-	__webpack_require__(124);
+	__webpack_require__(130);
 	__webpack_require__(115);
 	var _user   = __webpack_require__(105);
 	var _pg     = __webpack_require__(98);
@@ -1180,7 +1189,7 @@ webpackJsonp([9],{
 
 /***/ }),
 
-/***/ 124:
+/***/ 130:
 /***/ (function(module, exports) {
 
 	// removed by extract-text-webpack-plugin

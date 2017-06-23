@@ -44,7 +44,7 @@ var page = {
         // 验证成功
         if(validateResult.status){
             _user.login(formData, function(res){
-                window.location.href = _pg.getUrlParam('redirect') || './index.html';
+                    window.location.href = _pg.getUrlParam('redirect') || './index.html';
             }, function(errMsg){
                 formError.show(errMsg);
             });

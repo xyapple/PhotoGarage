@@ -35,14 +35,14 @@ var page = {
             if(validateResult.status){
                 // 更改用户信息
                 _user.updateUserInfo(userInfo, function(res, msg){
-                    _mm.successTips(msg);
+                    _pg.successTips(msg);
                     window.location.href = './user-center.html';
                 }, function(errMsg){
-                    _mm.errorTips(errMsg);
+                    _pg.errorTips(errMsg);
                 });
             }
             else{
-                _mm.errorTips(validateResult.msg);
+                _pg.errorTips(validateResult.msg);
             }
         });
     },
@@ -50,10 +50,10 @@ var page = {
     loadUserInfo : function(){
         var userHtml = '';
         _user.getUserInfo(function(res){
-            userHtml = _mm.renderHtml(templateIndex, res);
+            userHtml = _pg.renderHtml(templateIndex, res);
             $('.panel-body').html(userHtml);
         }, function(errMsg){
-            _mm.errorTips(errMsg);
+            _pg.errorTips(errMsg);
         });
     },
     // 验证字段信息
@@ -63,22 +63,22 @@ var page = {
             msg     : ''
         };
         // 验证手机号
-        if(!_mm.validate(formData.phone, 'phone')){
+        if(!_pg.validate(formData.phone, 'phone')){
             result.msg = 'Phone number does not match';
             return result;
         }
         // 验证邮箱格式
-        if(!_mm.validate(formData.email, 'email')){
+        if(!_pg.validate(formData.email, 'email')){
             result.msg = 'Email does not match';
             return result;
         }
         // 验证密码提示问题是否为空
-        if(!_mm.validate(formData.question, 'require')){
+        if(!_pg.validate(formData.question, 'require')){
             result.msg = 'Question can not be empty';
             return result;
         }
         // 验证密码提示问题答案是否为空
-        if(!_mm.validate(formData.answer, 'require')){
+        if(!_pg.validate(formData.answer, 'require')){
             result.msg = 'Answer can not be empty';
             return result;
         }
