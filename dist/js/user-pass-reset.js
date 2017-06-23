@@ -1102,7 +1102,7 @@ webpackJsonp([9],{
 	            }
 	            // 用户名不存在
 	            else{
-	                formError.show('请输入用户名');
+	                formError.show('Please enter user name');
 	            }
 	        });
 	        // 输入密码提示问题答案中的按钮点击
@@ -1125,7 +1125,7 @@ webpackJsonp([9],{
 	            }
 	            // 用户名不存在
 	            else{
-	                formError.show('请输入密码提示问题答案');
+	                formError.show('Please enter answer');
 	            }
 	        });
 	        // 输入新密码后的按钮点击
@@ -1146,7 +1146,7 @@ webpackJsonp([9],{
 	                }
 	                // 密码为空
 	                else{
-	                    formError.show('请输入不少于6位的新密码');
+	                    formError.show('Password at lease 6 digits');
 	                }
 	            });
 

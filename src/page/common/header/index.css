@@ -27,3 +27,14 @@
     height: 44px;
     width: 100px;
 }
+
+
+.crumb{
+    height: 50px;
+    line-height: 50px;
+    background: #eee;
+    color:#888;
+    font-size: 14px;
+    margin-bottom: 10px;
+    border-top: 2px solid #c60023;
+}

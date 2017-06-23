@@ -70,7 +70,9 @@ var config = {
       new HtmlWebpackPlugin(getHtmlConfig('user-login', 'Login')),
       new HtmlWebpackPlugin(getHtmlConfig('user-register', 'Register')),
       new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', 'Password Reset')),
-      new HtmlWebpackPlugin(getHtmlConfig('result', 'AfterLogin'))
+      new HtmlWebpackPlugin(getHtmlConfig('user-center', 'User Center')),
+     new HtmlWebpackPlugin(getHtmlConfig('user-center-update', 'User Info Update')),
+      new HtmlWebpackPlugin(getHtmlConfig('result', 'AfterLogin')),
 
     ]
 
