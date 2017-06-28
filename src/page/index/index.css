@@ -1,34 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Josefin+Sans|Spectral');
+
 .keywords-list{
     float: left;
-    width: 240px;
-    height: 350px;
+    width: 140px;
+    height: 250px;
     padding: 10px 0;
     margin-right: 10px;
-    background: #666;
+    background: #7acfd6;
     color: #fff;
+    font-family: 'Spectral', serif;
 }
 .keywords-list .keywords-item{
     padding-left: 10px;
     height: 35px;
     line-height: 35px;
-    font-size: 14px;
+    font-size: 25px;
+    font-weight: bold;
 }
 .keywords-list .keywords-item:hover{
-    background: #999;
+    background: #acc0c1;
 }
 .keywords-list .keywords-item .link{
     margin-right: 6px;
     color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
 }
 .keywords-list .keywords-item .link:hover{
-    color: #c60023;
+    color: #2a34c1;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 /* banner-con */
 .banner-con{
-    width: 830px;
+    width: 930px;
     float: left;
-    height: 370px;
+    height: 470px;
     background: #eee;
 }
 .banner-con .loading{
@@ -36,7 +42,7 @@
 }
 .banner-con .banner-img{
     width: 100%;
-    height: 370px;
+    height: 570px;
 }
 /* banner的前一张和后一张按钮 */
 .banner-con .banner-arrow{
@@ -66,10 +72,11 @@
 .floor-wrap .floor-title{
     height: 50px;
     line-height: 50px;
-    color: #d58717;
-    font-weight: normal;
-    font-size: 20px;
-    border-bottom: 1px solid #d58717;
+    color: #ea7359;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+    border-bottom: 1px solid #ea7359;
 }
 /* 更改各楼层标题颜色 */
 .floor-wrap:nth-child(2) .floor-title{
@@ -81,12 +88,24 @@
     border-bottom: 1px solid #a93931;
 }
 .floor-wrap:nth-child(4) .floor-title{
-    color: #488bad;
-    border-bottom: 1px solid #488bad;
+    color: #1c7c50;
+    border-bottom: 1px solid #1c7c50;
 }
 .floor-wrap:nth-child(5) .floor-title{
-    color: #642663;
-    border-bottom: 1px solid #642663;
+    color: #c43a48;
+    border-bottom: 1px solid #c43a48;
+}
+.floor-wrap:nth-child(6) .floor-title{
+    color: #f45f42;
+    border-bottom: 1px solid#f45f42;
+}
+.floor-wrap:nth-child(7) .floor-title{
+    color: #52abd8;
+    border-bottom: 1px solid #52abd8;
+}
+.floor-wrap:nth-child(8) .floor-title{
+    color: #a341f4;
+    border-bottom: 1px solid #a341f4;
 }
 .floor-wrap .floor-list{
     margin-right: -20px;
@@ -110,6 +129,7 @@
     left: 20px;
     font-size: 16px;
     color: #555;
+    font-family: 'Spectral', serif;
 }
 .floor-wrap .floor-list .floor-item .floor-img{
     position: absolute;

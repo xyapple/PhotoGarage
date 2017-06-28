@@ -1,12 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Spectral');
 .nav{
-    height: 30px;
-    line-height: 30px;
+    height: 50px;
+    line-height: 50px;
     border-bottom: 1px solid #ddd;
-    background: #eee;
+    background:  #7acfd6;
+
 }
 /*navbar user*/
 .nav .user{
     float: left;
+    color: #f2f6f7;
+    font-family: 'Spectral', serif;
 
 }
 .nav .user.login{
@@ -20,8 +24,12 @@
 /*navbar link*/
 .nav .nav-list{
     float: right;
+    color: #f2f6f7;
+    font-family: 'Spectral', serif;
 }
 .nav .nav-list .nav-item{
     display: inline-block;
     margin-left: 5px;
+    color:#f2f6f7;
+    font-family: 'Spectral', serif;
 }

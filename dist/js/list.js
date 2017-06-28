@@ -1455,7 +1455,7 @@ webpackJsonp([4],{
 /***/ 131:
 /***/ (function(module, exports) {
 
-	module.exports = "here\n";
+	module.exports = "{{#list}}\n    <li class=\"p-item\">\n        <div class=\"p-img-con\">\n            <a class=\"link\" href=\"./detail.html?productId={{id}}\" target=\"_blank\">\n                <img class=\"p-img\" src=\"{{imageHost}}{{mainImage}}\" alt=\"{{name}}\" />\n            </a>\n        </div>\n        <div class=\"p-price-con\">\n            <span class=\"p-price\">￥{{price}}</span>\n        </div>\n        <div class=\"p-name-con\">\n            <a class=\"p-name\" href=\"./detail.html?productId={{id}}\" target=\"_blank\">{{name}}</a>\n        </div>\n    </li>\n{{/list}}\n{{^list}}\n    <p class=\"err-tip\">很抱歉，实在找不到您要的商品。</p>\n{{/list}}\n";
 
 /***/ })
 

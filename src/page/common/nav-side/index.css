@@ -1,19 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Spectral');
 /*left nav bar*/
 .nav-side{
+    font-family: 'Spectral', serif;
     float: left;
     width: 130px;
     min-height: 100px;
 }
 .nav-side .nav-item{
     line-height: 25px;
-    font-size: 13px;
+    font-size: 14px;
+    font-weight: 400;
 
 }
 .nav-side .nav-item .link{
-    color: #888;
+    color: #7acfd6;
 }
 .nav-side .nav-item.active .link{
-    color: #c60023;
+    color: #acc0c1;
 }
 /*Right side conect*/
 .content.with-nav{

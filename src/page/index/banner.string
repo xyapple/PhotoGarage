@@ -25,6 +25,31 @@
                 <img class="banner-img" src="../../image/banner/banner5.jpg" />
             </a>
         </li>
+        <li>
+            <a href="./list.html?categoryId=100021" target="_blank">
+                <img class="banner-img" src="../../image/banner/banner6.jpg" />
+            </a>
+        </li>
+        <li>
+            <a href="./list.html?categoryId=100021" target="_blank">
+                <img class="banner-img" src="../../image/banner/banner7.jpg" />
+            </a>
+        </li>
+        <li>
+            <a href="./list.html?categoryId=100021" target="_blank">
+                <img class="banner-img" src="../../image/banner/banner8.jpg" />
+            </a>
+        </li>
+        <li>
+            <a href="./list.html?categoryId=100021" target="_blank">
+                <img class="banner-img" src="../../image/banner/banner9.jpg" />
+            </a>
+        </li>
+        <li>
+            <a href="./list.html?categoryId=100021" target="_blank">
+                <img class="banner-img" src="../../image/banner/banner10.jpg" />
+            </a>
+        </li>
     </ul>
     <div class="banner-arrow prev">
         <i class="fa fa-angle-left"></i>

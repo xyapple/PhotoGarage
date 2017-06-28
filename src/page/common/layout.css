@@ -1,9 +1,4 @@
-/*
-* @Author: Rosen
-* @Date:   2017-05-16 18:03:01
-* @Last Modified by:   Rosen
-* @Last Modified time: 2017-05-23 21:50:48
-*/
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Josefin+Sans|Spectral');
 /* css reset */
 *{
     margin: 0;
@@ -45,6 +40,7 @@ input[type='checkbox']{
     padding: 10px;
     font-size: 14px;
     color: #666;
+    font-family: 'Josefin Sans', sans-serif;
     font-weight: bold;
     border-bottom: 1px solid #eee;
 }
@@ -60,7 +56,8 @@ input[type='checkbox']{
 }
 /* 超链样式 */
 .link{
-    color: #999;
+    color: #00303F;
+    font-size: 13px;
     cursor: pointer;
     text-decoration: none;
 }
@@ -69,6 +66,7 @@ input[type='checkbox']{
 }
 .link-text{
     color: #999;
+    font-family: 'Spectral', serif;
     text-decoration: none;
 }
 /* btn */
@@ -79,7 +77,7 @@ input[type='checkbox']{
     line-height: 40px;
     vertical-align: middle;
     border: none;
-    background: #c60023;
+    background:  #FC4A1A;
     font-size: 17px;
     font-weight: bold;
     color: #fff;

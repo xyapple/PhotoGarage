@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Spectral');
 .nav-simple{
     height: 60px;
     line-height: 60px;
     border-bottom: 1px solid #ddd;
-    background: #fff;
+    background: #7acfd6;
 
 }
 .nav-simple .logo{
     font-size: 26px;
     font-weight: bold;
-    color: #c60023;
+    color: #FF6A5C;
     text-decoration: none;
+    font-family: 'Gloria Hallelujah', cursive;
 }
